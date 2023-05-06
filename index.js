@@ -6,7 +6,9 @@ connectToMongo();
 const app = express();
 const port = 5000;
 
-app.use(cors({}));
+app.use(cors({
+  origin:["https://optimizerhub.netlify.app","http://localhost:3000"]
+}));
 app.use(express.json());
 
 app.use("/api/auth", require('./routes/auth'));
